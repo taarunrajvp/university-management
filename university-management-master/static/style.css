@@ -1,0 +1,208 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #004080;
+    color: #fff;
+    padding: 1em 0;
+}
+
+header .dept {
+    align-items: center;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    padding: 0 1em;
+}
+
+header .logo img {
+    height: 100px;
+    margin-right: 1em;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin: 0 1em;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#hero {
+    background: url('hero-image.jpg') no-repeat center center/cover;
+    color: #e00a0a;
+    text-align: center;
+    padding: 4em 0;
+}
+
+#hero .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+main {
+    padding: 2em;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+#about-container {
+    background-color: #c7c7c7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#about h2 {
+    text-align: center;
+    font-size: 28px;
+}
+
+#about h4 {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #333333;
+}
+
+#about p {
+    font-size: 20px;
+    color: #000000;
+    line-height: 1.5;
+}
+
+footer {
+    background-color: #002040;
+    color: #fff;
+    text-align: center;
+    padding: 2em 0;
+}
+
+footer .quick-links,
+footer .contact-info,
+footer .social-media,
+footer .newsletter-signup,
+footer .university-disclaimer {
+    margin-bottom: 1em;
+}
+
+footer p {
+    margin: 0;
+}
+
+.image-container {
+    display: flex;
+    width: 1000px;
+
+}
+
+.image-container img {
+    width: 500px;
+    margin: 20px;
+
+}
+
+.data-container {
+    background-color: #cee7f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 80px;
+    margin-left: 3%;
+    width: 90%;
+    padding-left: 3%;
+
+}
+
+#contact {
+    margin-top: 50px;
+    background-color: #c5f5f8;
+    width: 100%;
+}
+
+.icon {
+    width: 50px;
+}
+
+.company-container {
+    display: flex;
+    margin-top: 50px;
+
+}
+
+.company-container img {
+    width: 300px;
+    margin: 20px;
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /* Set a clean font */
+    margin: 2rem;
+    /* Add some margin for spacing */
+}
+
+header {
+    text-align: center;
+    /* Center the title */
+}
+
+h1 {
+    margin-bottom: 1rem;
+    /* Add some space below the title */
+}
+
+table {
+    width: 100%;
+    /* Make the table fill the container */
+    border-collapse: collapse;
+    /* Remove borders between cells */
+    margin: 1rem auto;
+    /* Add some margin for better spacing */
+}
+
+th,
+td {
+    padding: 1rem;
+    /* Add padding to cells */
+    border: 1px solid #ddd;
+    /* Add thin borders */
+    text-align: left;
+    /* Align text to the left */
+}
+
+th {
+    background-color: #c5c0c0;
+    /* Light background for headers */
+    font-weight: bold;
+    /* Make headers stand out */
+}
+
+tr:nth-child(even) {
+    background-color: #eee;
+}
+
+/* Hover effects for interactivity */
+th:hover,
+td:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+    /* Indicate clickable elements (optional) */
+}

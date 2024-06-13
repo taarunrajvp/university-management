@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <h1>Faculty</h1>
+    <div id="students-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Faculty Name</th>
+                    <th>Designation</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+                    <!-- Add more columns as needed -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in facultys %}
+                <tr>
+                    <td>{{ student.name}}</td>
+                    <td>{{ student.phone_number}}</td>
+                    <td>{{ student.designation}}</td>
+                    <td>{{ student.email}}</td>
+                    <!-- Add more columns as needed -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

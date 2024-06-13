@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>North Eastern University</title>
+
+    <link rel="stylesheet" href="static/styles.css">
+
+    
+</head>
+<body>
+    <div class="header">
+        <img src="https://bcassetcdn.com/public/blog/wp-content/uploads/2022/05/11161444/Northeastern-University-Logo.png" alt="North Eastern University Logo" style="position: absolute; top: 10px; left: 10px; max-width: 100px; height: auto;">
+        <h1>North Eastern University</h1>
+        
+            <button class="redirect-button" onclick="location.href='/crud_form'" >Admin</button>
+        
+    </div>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        
+        <div class="dropdown">
+            <button class="dropbtn">Scholarships and Clubs</button>
+            <div class="dropdown-content">
+                <a href="#">Merit Scholarship</a>
+                <a href="#">Sports Scholarship</a>
+                <a href="#">Cultural Club</a>
+                <a href="#">Technical Club</a>
+                <a href="#">Literary Club</a>
+                <a href="#">Robotics Club</a>
+            </div>
+        </div>
+        <a href="#news">News and Achievements</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <br><br>
+    
+    <div class="carousel">
+        <img src="https://bcmcontrols.com/wp-content/uploads/2023/11/Projectshowcase-image-northeastern@2x-min.png" alt="Image 1">
+        <img src="https://images.shiksha.com/mediadata/images/1532692041phpQBDXpJ.jpeg" alt="Image 2">
+        <img src="https://educatedquest.com/wp-content/uploads/2022/10/IMG_3867-1024x768.jpg" alt="Image 3">
+      </div>
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+      <script >
+        const carousel = document.querySelector('.carousel');
+        const images = carousel.querySelectorAll('img');
+        const prevBtn = document.querySelector('.prev'); // Not used in this version
+        const nextBtn = document.querySelector('.next'); // Not used in this version
+        
+        let currentSlide = 0;
+        
+        function changeSlide(slide) {
+          images.forEach(image => image.style.opacity = 0);
+          images[slide].style.opacity = 1;
+          currentSlide = slide;
+        }
+        
+        // Show the first image initially by setting its opacity to 1
+        changeSlide(0);
+        
+        // Automatic image transition with time delay
+        let slideInterval = setInterval(() => {
+          currentSlide = (currentSlide + 1) % images.length;
+          changeSlide(currentSlide);
+        }, 2000);  // Change image every 1.5 seconds (1500 milliseconds)
+        
+        
+
+      </script>
+    
+    
+    </div>
+
+    <section id="home" style="background-color: #f9f9f9; padding: 60px 0;">
+        
+
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            
+            <h2
+                style="text-align: center; color: #333; font-size: 42px; margin-top: 40px; margin-bottom: 20px; font-family: 'Montserrat', sans-serif;">
+                About North Eastern University</h2>
+            <p style="padding: 0 20px; font-size: 20px; color: #555; line-height: 1.6; text-align: justify;">North
+                Eastern University is a prestigious educational institution located in India, renowned for its
+                commitment to academic excellence and holistic development. Offering a diverse range of undergraduate
+                and postgraduate programs, the university provides state-of-the-art facilities and a vibrant campus
+                environment conducive to learning and growth. With a dedicated faculty and a culture of inclusivity,
+                North Eastern University empowers students to realize their full potential and become leaders in their
+                respective fields. Committed to fostering innovation and social responsibility, the university plays a
+                pivotal role in shaping the future of the region and beyond. Through its comprehensive curriculum and
+                emphasis on holistic education, North Eastern University prepares students to thrive in an ever-evolving
+                global landscape.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <h1>Campus</h1>
+        <div class="campus-images">
+            <img src="/static/erdcampus.jpg" alt="Erode Campus" class="campus-image"  onclick="location.href='/erode'">
+            <p class="campus-name">Erode Campus</p> 
+            <img src="/static/chncampus.jpg" alt="Chennai Campus" class="campus-image" onclick="location.href='/chennai'">
+            <p class="campus-name">Chennai Campus</p> 
+        </div>
+    </div>
+
+    <section id="about" style="background-color: #f9f9f9; padding: 60px 0;">
+        <div class="container1">
+            <h2
+                style="text-align: center; color: #333; font-size: 42px; margin-bottom: 40px; font-family: 'Montserrat', sans-serif;">
+                About Us</h2>
+
+            <div class="mission-vision-container" style="display: flex; justify-content: center; gap: 40px;">
+                <div class="mission"
+                    style="flex: 1; background-color: #fff; margin-left:90px ;padding: 40px; border-radius: 20px; box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1); text-align: center;">
+                    <h3
+                        style="color: #007bff; font-size: 28px; margin-bottom: 20px; font-family: 'Poppins', sans-serif;">
+                        Our Mission</h3>
+                    <p style="font-size: 18px; color: #555;">The mission of Northeastern University is to educate and
+                        inspire students to become leaders in their chosen fields, fostering a culture of innovation,
+                        collaboration, and social responsibility. Through a commitment to experiential learning,
+                        interdisciplinary research, and global engagement, Northeastern aims to address complex
+                        challenges and drive positive change in society.</p>
+                </div>
+
+                <div class="vision"
+                    style="flex: 1; background-color: #fff; margin-right:90px ;padding: 40px; border-radius: 20px; box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1); text-align: center;">
+                    <h3
+                        style="color: #007bff; font-size: 28px; margin-bottom: 20px; font-family: 'Poppins', sans-serif;">
+                        Our Vision</h3>
+                    <p style="font-size: 18px; color: #555;">The vision of Northeastern University is to be a
+                        world-class institution known for its transformative impact on individuals, communities, and the
+                        world. By cultivating a diverse and inclusive community of scholars, fostering a spirit of
+                        inquiry and entrepreneurship, and leveraging its global network of partners, Northeastern seeks
+                        to be a catalyst for innovation and excellence in education, research, and service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="news">
+        <div class="container">
+            <h2>News & Achievements</h2>
+            <div class="image-row-1">
+                <img src="https://news.northeastern.edu/wp-content/uploads/2018/04/042318_MM_AHC_028.jpg" class="news-image">
+                <img src="https://atlasuniversity.edu.in/news/wp-content/uploads/2023/03/WhatsApp-Image-2023-03-06-at-11.30.14-768x1024.jpeg" class="news-image">
+                 <img src="https://news.northeastern.edu/wp-content/uploads/2015/04/ahc2015_1400b.jpg" class="news-image">
+            </div>
+                <br>
+            <div class="image-row">
+                 <img src="https://iot.eetimes.com/wp-content/uploads/2019/10/northeastern.jpg" class="news-image">
+                <img src="https://images.shiksha.com/mediadata/images/1532692042phpOjnOVX.jpeg" class="news-image">
+                <img src="https://media.licdn.com/dms/image/D5612AQG2UOE9LRFjoA/article-cover_image-shrink_720_1280/0/1688069482687?e=2147483647&v=beta&t=C1VUhgDx72bJRzAK8KMUwpV1EI-0tKZVzWZC7OCV41U" class="news-image">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 style="padding: 20px; color: #004c97;">Contact Us</h2>
+        <p style="padding: 10px 20px; font-size: 16px; color: #555; line-height: 1.6;">
+            <strong>North Eastern University</strong><br>
+            
+            <strong>Phone:</strong> +91 9876543210<br>
+            <strong>Email:</strong> contact@neu.edu<br>
+        </p>
+    </section>
+    <div class="footer">
+        &copy; 2024 North Eastern University. All rights reserved.
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            const carouselInner = document.querySelector('.carousel-inner');
+            let currentIndex = 0;
+
+            function showItem(index) {
+                carouselInner.style.transform = translateX(-${index * 100}%);
+            }
+
+            function nextItem() {
+                currentIndex = (currentIndex + 1) % carouselItems.length;
+                showItem(currentIndex);
+            }
+
+            setInterval(nextItem, 3000);
+        });
+    </script>
+</body>
+</html>

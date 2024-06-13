@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD FORM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        button {
+            padding: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CRUD</h1>
+
+    <h2>Students</h2>
+    <form id="student-form">
+        <input type="text" id="student-name" placeholder="Name" required>
+        <input type="number" id="student-age" placeholder="Age" required>
+        <input type="email" id="student-email" placeholder="Email" required>
+        <button type="submit">Add Student</button>
+    </form>
+    <ul id="student-list"></ul>
+
+    <h2>Faculty</h2>
+    <form id="faculty-form">
+        <input type="text" id="faculty-name" placeholder="Name" required>
+        <input type="text" id="faculty-department" placeholder="Department" required>
+        <input type="email" id="faculty-email" placeholder="Email" required>
+        <button type="submit">Add Faculty</button>
+    </form>
+    <ul id="faculty-list"></ul>
+
+    <script>
+        // JavaScript to handle CRUD operations
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadStudents();
+            loadFaculty();
+
+            // Add Student
+            document.getElementById('student-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const name = document.getElementById('student-name').value;
+                const age = document.getElementById('student-age').value;
+                const email = document.getElementById('student-email').value;
+
+                fetch('/students', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ name, age, email })
+                }).then(response => response.json())
+                  .then(data => {
+                      loadStudents();
+                      document.getElementById('student-form').reset();
+                  });
+            });
+
+            // Add Faculty
+            document.getElementById('faculty-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const name = document.getElementById('faculty-name').value;
+                const department = document.getElementById('faculty-department').value;
+                const email = document.getElementById('faculty-email').value;
+
+                fetch('/faculty', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ name, department, email })
+                }).then(response => response.json())
+                  .then(data => {
+                      loadFaculty();
+                      document.getElementById('faculty-form').reset();
+                  });
+            });
+        });
+
+        function loadStudents() {
+            fetch('/students')
+                .then(response => response.json())
+                .then(data => {
+                    const studentList = document.getElementById('student-list');
+                    studentList.innerHTML = '';
+                    data.forEach(student => {
+                        const li = document.createElement('li');
+                        li.textContent = `${student.name} - ${student.age} - ${student.email}`;
+                        studentList.appendChild(li);
+                    });
+                });
+        }
+
+        function loadFaculty() {
+            fetch('/faculty')
+                .then(response => response.json())
+                .then(data => {
+                    const facultyList = document.getElementById('faculty-list');
+                    facultyList.innerHTML = '';
+                    data.forEach(faculty => {
+                        const li = document.createElement('li');
+                        li.textContent = `${faculty.name} - ${faculty.department} - ${faculty.email}`;
+                        facultyList.appendChild(li);
+                    });
+                });
+        }
+    </script>
+</body>
+</html>
